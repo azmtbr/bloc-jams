@@ -35,6 +35,7 @@ body {
 
 @media (min-width: 64rem) {
     html { font-size: 120%;}
+<<<<<<< HEAD
     
     .column {
         float: left;
@@ -48,5 +49,7 @@ body {
     .column.third { width: 33.3%; }
     .column.fourth { width: 25%; }
     .column.flow-opposite { float: right; }
+=======
+>>>>>>> responsiveness-checkpoint
 }
 
