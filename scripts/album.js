@@ -15,7 +15,7 @@ var albumPicasso = {
  };
 
 
- var albumMarconi = {
+var albumMarconi = {
      name: 'The Telephone',
      artist: 'Guglielmo Marconi',
      label: 'EM',
@@ -29,6 +29,22 @@ var albumPicasso = {
          { name: 'Wrong phone number', length: '2:15'}
      ]
  };
+
+var albumKoni = {
+	name: 'I\'m a great dog',
+	artist: 'Koni Bear',
+	label: 'Woof Records',
+	year: '2010',
+	albumArtUrl: 'assets/images/album_covers/Koni1.jpg',
+	songs: [
+		{ name: 'Woof and so much more', length: '3:54' },
+		{ name: 'I\'m a pup and I just don\'t care', length: '3:55' },
+		{ name: 'Dogs are so great!', length: '3:56' },
+		{ name: 'Dog songs would sound pretty much the same.', length: '3:57' },
+		{ name: 'I\'m hungry now. Goodbye.', length: '3:58' }
+	]
+	
+}
 
 var createSongRow = function(songNumber, songName, songLength) {
      var template =
@@ -67,4 +83,15 @@ var setCurrentAlbum = function(album) {
  
  window.onload = function() {
      setCurrentAlbum(albumPicasso);
+ 	
+	 var albumArray = [albumKoni, albumMarconi, albumPicasso];
+	 var index = 0;
+
+	 document.getElementsByClassName('album-cover-art')[0].addEventListener("click", function(event) {
+	 	setCurrentAlbum(albumArray[index]);
+		index++;
+		if (index == albumArray.length) {
+			index = 0;
+		}
+	 });
  };
