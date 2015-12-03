@@ -1,5 +1,5 @@
 
-var albumPicasso = {
+vgit@github.com:matstc/bloc-jams-2.gitar albumPicasso = {
      name: 'The Colors',
      artist: 'Pablo Picasso',
      label: 'Cubism',
@@ -35,7 +35,7 @@ var albumKoni = {
 	artist: 'Koni Bear',
 	label: 'Woof Records',
 	year: '2010',
-	albumArtUrl: 'assets/images/album_covers/Koni1.jpg',
+	albumArtUrl: 'assets/images/album_covers/Koni1.JPG',
 	songs: [
 		{ name: 'Woof and so much more', length: '3:54' },
 		{ name: 'I\'m a pup and I just don\'t care', length: '3:55' },
