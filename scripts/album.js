@@ -30,6 +30,14 @@ var albumMarconi = {
      ]
  };
 
+var songListContainer = document.getElementsByClassName('album-view-song-list')[0];
+var songRows = document.getElementsByClassName('album-view-song-item');
+
+var playButtonTemplate = '<a class="album-song-button"><span class="ion-play"></span></a>';
+var pauseButtonTemplate = '<a class="album-song-button"><span class="ion-pause"></span></a>';
+
+var currentlyPlayingSong = null;
+
 var createSongRow = function(songNumber, songName, songLength) {
      var template =
         '<tr class="album-view-song-item">'
@@ -49,11 +57,11 @@ var createSongRow = function(songNumber, songName, songLength) {
 			var currentlyPlayingCell = $('.song-item-number[data-song-number="' + currentlyPlayingSong + '"]');
 			currentlyPlayingCell.html(currentlyPlayingSong);
 		}
-		if (currentlyPlayingSong !== songNumber) {
+		if (currentlyPlayingSong !== songItem) {
 			// Switch from Play -> Pause button to indicate new song is playing.
 			$(this).html(pauseButtonTemplate);
-			currentlyPlayingSong = songNumber;
-		} else if (currentlyPlayingSong === songNumber) {
+			currentlyPlayingSong = songItem;
+		} else if (currentlyPlayingSong === songItem) {
 			// Switch from Pause -> Play button to pause currently playing song.
 			$(this).html(playButtonTemplate);
 			currentlyPlayingSong = null;
@@ -114,13 +122,7 @@ var setCurrentAlbum = function(album) {
 	 
 
 
-var songListContainer = document.getElementsByClassName('album-view-song-list')[0];
-var songRows = document.getElementsByClassName('album-view-song-item');
 
-var playButtonTemplate = '<a class="album-song-button"><span class="ion-play"></span></a>';
-var pauseButtonTemplate = '<a class="album-song-button"><span class="ion-pause"></span></a>';
-
-var currentlyPlayingSong = null;
  
 $(document).ready(function() {
      setCurrentAlbum(albumPicasso);
